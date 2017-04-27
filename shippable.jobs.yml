@@ -37,7 +37,7 @@ jobs:
            - script: cat ${JOB_STATE}/zep-params.env
            - script: env
 
-    - name: z_runCI
+    - name: zep-pl-ci_runCI
       type: runCI
       steps:
         - IN: zep-params
