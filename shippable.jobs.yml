@@ -1,0 +1,45 @@
+jobs:
+    - name: z_runsh
+      type: runSh
+      steps:
+        - IN: zep-repo
+          showBuildStatus: true
+        - OUT: zeph-pl-ci_ciRepo
+        - TASK:
+           - script: env
+           - script: . /build/IN/zep-repo/gitRepo/scripts/ci/build-docs.sh
+
+    - name: z_runsh_daily
+      type: runSh
+      steps:
+        - IN: daily-timer
+        - OUT: zep-params
+        - TASK:
+           - script: echo "Running daily job"
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}"
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}"
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}" > ${JOB_STATE}/zep-params.env
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}" >> ${JOB_STATE}/zep-params.env
+           - script: cat ${JOB_STATE}/zep-params.env
+           - script: env
+
+    - name: z_runsh_codescan
+      type: runSh
+      steps:
+        - IN: week-thu
+        - OUT: zep-params
+        - TASK:
+           - script: echo "Running code scan"
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}"
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}"
+           - script: echo "BUILD_NUMBER=${BUILD_NUMBER}" > ${JOB_STATE}/zep-params.env
+           - script: echo "JOB_TRIGGERED_BY_NAME_HACK=${JOB_TRIGGERED_BY_NAME}" >> ${JOB_STATE}/zep-params.env
+           - script: cat ${JOB_STATE}/zep-params.env
+           - script: env
+
+    - name: z_runCI
+      type: runCI
+      steps:
+        - IN: zep-params
+        - IN: zephyr_ciRepo
+        
