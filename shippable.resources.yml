@@ -1,0 +1,35 @@
+resources:
+    - name: week-thu
+      type: time
+      seed:
+          interval: "11 21 * * 4"
+
+    - name: daily-timer
+      type: time
+      seed:
+          interval: "27 22 * * *"
+
+    - name: zep-repo
+      type: gitRepo
+      integration: github
+      pointer:
+          sourceName: shiptest-rc-me/zep-pl-ci
+          branch: master
+         # buildOnPullRequest: false
+          #buildOnCommit: false
+
+    - name: zep-image
+      type: image
+      integration: docker
+      pointer:
+        sourceName: shippabledocker/pipelinev2
+      seed:
+        versionName: deploy.1
+
+    - name: zep-params
+      type: params
+      version:
+        params:
+            BUILD_NUMBER: "1"
+            JOB_TRIGGERED_BY_NAME_HACK: "seed"            
+            
