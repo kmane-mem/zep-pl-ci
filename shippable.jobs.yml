@@ -4,7 +4,7 @@ jobs:
       steps:
         - IN: zep-repo
           showBuildStatus: true
-        - OUT: zeph-pl-ci_ciRepo
+        - OUT: zep-pl-ci_ciRepo
         - TASK:
            - script: env
            - script: . /build/IN/zep-repo/gitRepo/scripts/ci/build-docs.sh
@@ -41,5 +41,5 @@ jobs:
       type: runCI
       steps:
         - IN: zep-params
-        - IN: zephyr_ciRepo
+        - IN: zep-pl-ci_ciRepo
         
