@@ -1,5 +1,5 @@
 jobs:
-    - name: z_runsh
+    - name: zep_runsh
       type: runSh
       steps:
         - IN: zep-repo
