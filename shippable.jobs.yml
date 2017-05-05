@@ -4,7 +4,7 @@ jobs:
       steps:
         - IN: zep-repo
           showBuildStatus: true
-        - OUT: - IN: coretest_envbuildphp_ciRepo
+        - OUT: coretest_envbuildphp_ciRepo
         - TASK:
            - script: env
            - script: . /build/IN/zep-repo/gitRepo/scripts/ci/build-docs.sh
