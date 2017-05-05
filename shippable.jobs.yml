@@ -2,12 +2,12 @@ jobs:
     - name: zep_runsh
       type: runSh
       steps:
-        - IN: zep-repo
+        - IN: coretest_envbuildphpRepo
           showBuildStatus: true
         - OUT: coretest_envbuildphp_ciRepo
         - TASK:
            - script: env
-           - script: . /build/IN/zep-repo/gitRepo/scripts/ci/build-docs.sh
+           - script: . /build/IN/coretest_envbuildphpRepo/gitRepo/echo.sh
 
     - name: z_runsh_daily
       type: runSh
