@@ -17,7 +17,14 @@ resources:
           branch: master
          # buildOnPullRequest: false
           #buildOnCommit: false
-
+          
+    - name: coretest_envbuildphpRepo
+      type: gitRepo
+      integration: github
+      pointer:
+          sourceName: shiptest-rc-me/coretest_envbuildphp
+          branch: master
+          
     - name: zep-image
       type: image
       integration: docker
@@ -31,5 +38,4 @@ resources:
       version:
         params:
             BUILD_NUMBER: "1"
-            JOB_TRIGGERED_BY_NAME_HACK: "seed"            
-            
+            JOB_TRIGGERED_BY_NAME_HACK: "seed"
