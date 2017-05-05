@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Building docs!"
+echo "Building docs!!"
