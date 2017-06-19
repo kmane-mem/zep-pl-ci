@@ -44,4 +44,16 @@ jobs:
         - IN: coretest_envbuildphp_ciRepo
         
        # - IN: zep-pl-ci_ciRepo
-        
+    
+    - name: release-zep
+      type: release
+      steps:
+        - IN: ship_verzep
+        #- IN: push_image_tag
+        - TASK: managed
+          bump: major
+          
+    - name: manifest-zep
+      type: manifest
+      steps:
+        - IN: test_imgzz 
