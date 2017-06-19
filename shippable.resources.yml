@@ -1,4 +1,9 @@
 resources:
+    - name: ship_verzep
+      type: version
+      seed:
+        versionName: "6.1.4"
+      
     - name: week-thu
       type: time
       seed:
@@ -8,7 +13,15 @@ resources:
       type: time
       seed:
           interval: "27 22 * * *"
-
+    
+    - name: test_imgzz
+      type: image
+      integration: docker
+      pointer:
+        sourceName: "shippabledocker/ship_plv2node"
+      seed:
+        versionName: "master"
+      
     - name: zep-repo
       type: gitRepo
       integration: github
