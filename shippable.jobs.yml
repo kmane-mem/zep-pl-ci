@@ -57,3 +57,16 @@ jobs:
       type: manifest
       steps:
         - IN: test_imgzz 
+
+    - name: zep_runsh_fromCI
+      type: runSh
+      steps:
+        #- IN: coretest_envbuildphpRepo
+         # showBuildStatus: true
+         # switch:off
+        - IN: coretest_envbuildphp_ciRepo
+        - TASK:
+           - script: env
+           - script: ls
+           #- script: . /build/IN/coretest_envbuildphpRepo/gitRepo/echo.sh
+           
