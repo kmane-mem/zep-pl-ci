@@ -8,6 +8,8 @@ jobs:
         - TASK:
            - script: env
            - script: . /build/IN/coretest_envbuildphpRepo/gitRepo/echo.sh
+      flag:
+        - zep_runsh
 
     - name: z_runsh_daily
       type: runSh
