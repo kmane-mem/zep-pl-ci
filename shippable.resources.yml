@@ -44,11 +44,11 @@ resources:
       pointer:
         sourceName: shippabledocker/pipelinev2
       seed:
-        versionName: deploy.1
+        versionName: deploy.2
 
     - name: zep-params
       type: params
       version:
         params:
-            BUILD_NUMBER: "1"
-            JOB_TRIGGERED_BY_NAME_HACK: "seed"
+            BUILD_NUMBER: "2"
+            JOB_TRIGGERED_BY_NAME_HACK: "test-me"
