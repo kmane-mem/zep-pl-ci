@@ -44,7 +44,7 @@ jobs:
       steps:
         - IN: zep-params
         - IN: coretest_envbuildphp_ciRepo
-        
+        - IN: zep-image
        # - IN: zep-pl-ci_ciRepo
     
     - name: release-zep
